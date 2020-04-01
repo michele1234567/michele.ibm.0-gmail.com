@@ -1,0 +1,28 @@
+{
+   "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+   },
+   "description": "QuikNote is an extension that allows you to take a note while capturing the current url. View anywhere when logged into Chrome",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl6j8MQCYnAwgzEmpiouYNRXDRZQy7ofvGjH1lS38yYDrQmx8+5YCxGkbgzkYo7DzLa7PboQbYiIESXLwuj725xnW4jzgHvMfah/Hm1cLllATAXP0IvOTX8/vZ70Icx6zE8ROuFIhKy4SB5s+M8cl6jxkRVEOoRsxy3EeE9J+pac4h5ar9bACGF7cA5UBPHxZUwCmfdD/tTRgbmE8KChm1cGERGLG4SnaXR0Xc2s/z89gT72GdwkrbaXjY5XdI2YbASPaDi+bdxIQLPnEgavw40+S9daJ+HEneimoFe8I2CIVRYD+NHWLfpTHuyjxGUQ37prNtzibwt56JbwpTmD8WQIDAQAB",
+   "manifest_version": 2,
+   "name": "QuikNote",
+   "permissions": [
+      "activeTab",
+      "tabs",
+      "https://ajax.googleapis.com/",
+      "storage",
+      "alarms",
+      "notifications"
+   ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2",
+   "options_page": "settings.html",
+   "background": {
+      "scripts": [
+         "note-common.js",
+         "background.js"
+      ],
+      "persistent": false
+   }
+}

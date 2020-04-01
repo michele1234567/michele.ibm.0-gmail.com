@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="settings.js"></script>
+</head>
+
+<body>
+    <p></p>
+    <button id="export">Export</button>
+    <p></p>
+    import : <input type="file" id="import_file"></input><button id="import">Import</button>
+    <p></p>
+    <div>
+        <label for="type">Add color for type</label>
+        <select id="type">
+            <option value="statuses">status</option>
+            <option value="labels">label</option>
+        </select>
+        <input type="color" id="color"></input>
+        <input type="text" id="add_label" placeholder="type status or label"></input>
+        <button id="add_color">Add Color</button>
+    </div>
+    <p></p>
+    <b>STATUS</b>
+    <table id="statuses">
+
+    </table>
+    <p></p>
+    <b>LABELS</b>
+    <table id="labels">
+
+    </table>
+
+</body>
+
+</html>

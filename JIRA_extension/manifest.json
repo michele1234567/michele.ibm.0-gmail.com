@@ -1,0 +1,35 @@
+{
+   "name": "MY JIRA",
+   "version": "1.0",
+   "manifest_version": 2,
+   "options_page": "settings.html",
+   "permissions": [
+      "storage",
+      "tabs",
+      "notifications",
+      "http://*/",
+      "https://*/"
+   ],
+   "browser_action": {
+      "name": "My JIRA",
+      "title": "My JIRA"
+   },
+   "background": {
+      "persistent": true,
+      "scripts": [
+         "background.js"
+      ]
+   },
+   "content_scripts": [
+      {
+         "matches": [
+            "https://jira02.hclpnp.com/*"
+         ],
+         "js": [
+            "jquery-3.4.1.min.js",
+            "contentScript.js"
+         ],
+         "run_at": "document_idle"
+      }
+   ]
+}
