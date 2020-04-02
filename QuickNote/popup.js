@@ -5,7 +5,7 @@
 var app = angular.module('app', []);
 
 app.controller('appCtrl', function ($scope, $q) {
-  let sort = -1;
+  $scope.sort = -1;
   let url = '';
   $scope.compressedFormat = settings.compressed;
   $scope.noteList = null;
@@ -139,11 +139,11 @@ app.controller('appCtrl', function ($scope, $q) {
 
 
   function _sortByDate(noteList) {
-    noteList.sort((a, b) => ((a.date > b.date) ? (1 * sort) : (-1 * sort)));
+    noteList.sort((a, b) => ((a.date > b.date) ? (1 * $scope.sort) : (-1 * $scope.sort)));
   }
 
   $scope.sortByDate = function () {
-    sort = -1 * sort;
+    $scope.sort = -1 * $scope.sort;
     _sortByDate($scope.noteList);
   };
 

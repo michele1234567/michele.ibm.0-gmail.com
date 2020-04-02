@@ -47,7 +47,9 @@
                 <span class="q-logo">Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span
                     class='logo-text'>ote</span>
             </span>
-            <button data-ng-click="sortByDate()">Sort</button>
+            
+            <button data-ng-click="sortByDate()" title="Sort by Date"><span class="glyphicon" ng-class="sort ===1 ? 'glyphicon-arrow-up':'glyphicon-arrow-down'" aria-hidden="true"></span></button>
+
             <button
                 data-ng-click="compressedFormat = !compressedFormat">{{ compressedFormat ? 'Uncompress': 'Compress'}}</button>
             <span id="search-bar-icon" class="glyphicon glyphicon-search"></span>
