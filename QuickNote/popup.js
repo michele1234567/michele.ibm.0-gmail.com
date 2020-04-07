@@ -33,7 +33,7 @@ app.controller('appCtrl', function ($scope, $q) {
             console.log(err);
           }
           $scope.noteList = storedNotes.data;
-          if($scope.noteList.length < 2){
+          if($scope.noteList.length < 4){
             $scope.compressedFormat = false;
           }
           deferred.resolve($scope.noteList); 
@@ -231,7 +231,7 @@ app.controller('appCtrl', function ($scope, $q) {
     return $scope.noteList.splice(index, 1);
   };
 
-  function _editNote(note) {
+  function _editNote() {
     chrome.storage.sync.get(function (storedNotes) {
       storedNotes.data = $scope.noteList;
       chrome.storage.sync.set(storedNotes, function () {
@@ -244,7 +244,7 @@ app.controller('appCtrl', function ($scope, $q) {
 
   $scope.editNote = function (note, index) {
     let noteText = document.getElementById("text" + index).innerText;
-    note.noteText = noteText;
+    note.noteText = noteText.trim();
     _editNote(note);
   };
 

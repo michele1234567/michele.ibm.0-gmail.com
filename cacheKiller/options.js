@@ -27,7 +27,7 @@ function _removeAllFilteredUrls() {
     }
 }
 
- function _rowContent(url) {
+function _rowContent(url) {
     const span = document.createElement('span');
     const div = document.createElement('div');
     const content = document.createTextNode(url);
@@ -85,7 +85,7 @@ function _loadFilteredUrls() {
 function _saveFilteredUrls(_filteredUrl) {
     chrome.storage.sync.get(function (storedData) {
 
-        let filteredUrls = storedData === undefined ? storedData.filteredUrls : [];
+        let filteredUrls = storedData === undefined ? [] : storedData.filteredUrls;
         filteredUrls.push(_filteredUrl);
         let storeData = { filteredUrls: filteredUrls };
         chrome.storage.sync.set(storeData, function () {
@@ -111,6 +111,10 @@ function restoreOptions() {
 save.addEventListener("click", saveOptions);
 
 addFilteredURLButton.addEventListener("click", function _addFilteredUrl() {
+    if(addFilteredURL.value === ''){
+        alert('Please add URL');
+        return;
+    }
     _saveFilteredUrls(addFilteredURL.value);
     _addNewUrlToTable(addFilteredURL.value);
     addFilteredURL.value = '';

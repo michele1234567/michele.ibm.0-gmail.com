@@ -26,6 +26,7 @@
                     "cache": true
                 }, function () {
                     clearRunning = false;
+                    console.log('cache kills clear cache for', filteredUrls);
                 });
                 /* clearRunning = false; */
 
